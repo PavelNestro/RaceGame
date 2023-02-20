@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IEn-po-36d">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="gogono-cocoa-mochi-cyrillic.otf">
+            <string>GogonoCocoaMochiCyrillic</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="GOU-aj-8XE">
+            <objects>
+                <navigationController id="IEn-po-36d" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gH9-Mc-pHd">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Xo3-2Y-OtP" kind="relationship" relationship="rootViewController" id="PnT-wR-M7E"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gy7-DB-nfs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-806" y="128"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="d61-Wl-kjD">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="Xo3-2Y-OtP" customClass="ViewController" customModule="race8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K5V-VS-IEM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6f846c6a755d3d001674156b46153813--space-wallpaper-phone-backgrounds" translatesAutoresizingMaskIntoConstraints="NO" id="jws-fY-Qyi">
+                                <rect key="frame" x="-50" y="-50" width="514" height="996"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEe-li-a5l">
+                                <rect key="frame" x="107" y="347" width="200" height="60"/>
+                                <color key="backgroundColor" red="0.23560864579999999" green="0.44908433440000001" blue="0.67449338329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Qj8-tw-ajA"/>
+                                    <constraint firstAttribute="height" constant="60" id="h4N-D5-Wtu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="25"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.82745099070000006" green="0.90196073060000004" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonAction:" destination="Xo3-2Y-OtP" eventType="touchUpInside" id="d6c-Q8-zud"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8RV-fg-e52">
+                                <rect key="frame" x="107" y="447" width="200" height="60"/>
+                                <color key="backgroundColor" red="0.23560864579999999" green="0.44908433440000001" blue="0.67449338329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="HsH-bk-WQD"/>
+                                    <constraint firstAttribute="width" constant="200" id="WaK-Yp-TJQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="25"/>
+                                <color key="tintColor" red="1" green="0.7705520266" blue="0.49839402939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Options">
+                                    <color key="titleColor" red="0.82745099070000006" green="0.90196073060000004" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="optionsButtonAction:" destination="Xo3-2Y-OtP" eventType="touchUpInside" id="htT-Dn-M7H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nf-29-40C">
+                                <rect key="frame" x="107" y="547" width="200" height="60"/>
+                                <color key="backgroundColor" red="0.23560864579999999" green="0.44908433440000001" blue="0.67449338329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="25"/>
+                                <color key="tintColor" red="1" green="0.7705520266" blue="0.49839402939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Records">
+                                    <color key="titleColor" red="0.82745099070000006" green="0.90196073060000004" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordsButtonAction:" destination="Xo3-2Y-OtP" eventType="touchUpInside" id="xMs-9A-n1g"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hp9-Ss-t4G"/>
+                        <color key="backgroundColor" red="0.79006464060000003" green="0.86078917980000003" blue="0.64323855249999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="lEe-li-a5l" firstAttribute="centerY" secondItem="hp9-Ss-t4G" secondAttribute="centerY" constant="-100" id="JIC-s9-RdO"/>
+                            <constraint firstItem="jws-fY-Qyi" firstAttribute="leading" secondItem="hp9-Ss-t4G" secondAttribute="leading" constant="-50" id="RxQ-UU-QK7"/>
+                            <constraint firstItem="hp9-Ss-t4G" firstAttribute="trailing" secondItem="jws-fY-Qyi" secondAttribute="trailing" constant="-50" id="XFk-j3-K9U"/>
+                            <constraint firstItem="7nf-29-40C" firstAttribute="width" secondItem="8RV-fg-e52" secondAttribute="width" id="dU0-se-wJg"/>
+                            <constraint firstItem="7nf-29-40C" firstAttribute="centerY" secondItem="hp9-Ss-t4G" secondAttribute="centerY" constant="100" id="f9x-RC-afG"/>
+                            <constraint firstItem="7nf-29-40C" firstAttribute="centerX" secondItem="K5V-VS-IEM" secondAttribute="centerX" id="iTl-Lv-4lU"/>
+                            <constraint firstItem="7nf-29-40C" firstAttribute="height" secondItem="8RV-fg-e52" secondAttribute="height" id="jk3-Ie-Dms"/>
+                            <constraint firstItem="8RV-fg-e52" firstAttribute="centerX" secondItem="hp9-Ss-t4G" secondAttribute="centerX" id="nze-Fg-bok"/>
+                            <constraint firstItem="lEe-li-a5l" firstAttribute="centerX" secondItem="hp9-Ss-t4G" secondAttribute="centerX" id="sll-dU-xBt"/>
+                            <constraint firstItem="8RV-fg-e52" firstAttribute="centerY" secondItem="hp9-Ss-t4G" secondAttribute="centerY" id="t9L-ax-Gff"/>
+                            <constraint firstAttribute="bottom" secondItem="jws-fY-Qyi" secondAttribute="bottom" constant="-50" id="vL8-9o-gdh"/>
+                            <constraint firstItem="jws-fY-Qyi" firstAttribute="top" secondItem="K5V-VS-IEM" secondAttribute="top" constant="-50" id="vwC-fj-g0Z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="NEC-LK-wKh"/>
+                    <connections>
+                        <outlet property="optionsButton" destination="8RV-fg-e52" id="SqD-z4-OQC"/>
+                        <outlet property="recordsButton" destination="7nf-29-40C" id="JnA-u0-d7u"/>
+                        <outlet property="startButton" destination="lEe-li-a5l" id="bi0-eE-dKj"/>
+                        <segue destination="HK5-kg-opy" kind="show" id="oXl-AK-OyP"/>
+                        <segue destination="I5V-0O-BDq" kind="show" id="t71-tx-qQm"/>
+                        <segue destination="Cc7-Yg-hCd" kind="show" id="zgA-KZ-B2J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BHB-ZH-635" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="582.60869565217399" y="127.90178571428571"/>
+        </scene>
+        <!--View Start-->
+        <scene sceneID="mTb-Td-9EB">
+            <objects>
+                <viewController storyboardIdentifier="ViewStart" id="HK5-kg-opy" customClass="ViewStart" customModule="race8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9HC-YF-cmi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARi-h1-Hvx">
+                                <rect key="frame" x="20" y="92" width="97" height="14"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="backButton:" destination="HK5-kg-opy" eventType="touchUpInside" id="cMQ-J7-Wqj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9g-5p-L2y">
+                                <rect key="frame" x="20" y="578" width="97" height="315"/>
+                                <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="NTk-bw-ZjS"/>
+                                    <constraint firstAttribute="height" constant="315" id="h4c-EB-VWP"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="&lt;-">
+                                    <fontDescription key="titleFontDescription" type="italicSystem" pointSize="28"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="leftButtonAction:" destination="HK5-kg-opy" eventType="touchUpInside" id="zPa-hR-YpL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EV-ge-K32">
+                                <rect key="frame" x="297" y="578" width="97" height="315"/>
+                                <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="-&gt;">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="28"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="rightButtonAction:" destination="HK5-kg-opy" eventType="touchUpInside" id="yDC-7c-g5l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXC-5L-gx9">
+                                <rect key="frame" x="157" y="427" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.9803170538" green="0.92292099380000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="84q-zU-xJe"/>
+                                    <constraint firstAttribute="width" constant="100" id="rCe-IC-deE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="25"/>
+                                <color key="tintColor" red="0.80987197160000002" green="0.4598149587" blue="0.3921107251" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Start"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startButtonAction:" destination="HK5-kg-opy" eventType="touchUpInside" id="KDe-3j-D6G"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heal" translatesAutoresizingMaskIntoConstraints="NO" id="cYM-Mt-xwz">
+                                <rect key="frame" x="348" y="60" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="63y-eu-kb0"/>
+                                    <constraint firstAttribute="height" constant="30" id="i3i-7T-F5G"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxX-74-0bn">
+                                <rect key="frame" x="388" y="52" width="16" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="NAi-ZJ-Ztn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z99-3x-xZc">
+                                <rect key="frame" x="10" y="52" width="11.5" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="K9s-Km-u2U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="a1z-3o-JFD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="a1z-3o-JFD" firstAttribute="trailing" secondItem="2EV-ge-K32" secondAttribute="trailing" constant="20" id="36F-Rb-kf2"/>
+                            <constraint firstItem="2EV-ge-K32" firstAttribute="width" secondItem="H9g-5p-L2y" secondAttribute="width" id="5zx-cA-rlw"/>
+                            <constraint firstItem="cYM-Mt-xwz" firstAttribute="top" secondItem="9HC-YF-cmi" secondAttribute="top" constant="60" id="6Zt-ub-44T"/>
+                            <constraint firstItem="2EV-ge-K32" firstAttribute="centerY" secondItem="H9g-5p-L2y" secondAttribute="centerY" id="E7o-mW-4vy"/>
+                            <constraint firstItem="mXC-5L-gx9" firstAttribute="centerX" secondItem="a1z-3o-JFD" secondAttribute="centerX" id="Eih-Vb-LCh"/>
+                            <constraint firstItem="2EV-ge-K32" firstAttribute="height" secondItem="H9g-5p-L2y" secondAttribute="height" id="Hro-tp-R5O"/>
+                            <constraint firstItem="z99-3x-xZc" firstAttribute="top" secondItem="9HC-YF-cmi" secondAttribute="top" constant="52" id="LST-ym-PE2"/>
+                            <constraint firstItem="a1z-3o-JFD" firstAttribute="trailing" secondItem="FxX-74-0bn" secondAttribute="trailing" constant="10" id="ZIy-wc-p4P"/>
+                            <constraint firstItem="H9g-5p-L2y" firstAttribute="leading" secondItem="a1z-3o-JFD" secondAttribute="leading" constant="20" id="eTS-VE-xub"/>
+                            <constraint firstItem="mXC-5L-gx9" firstAttribute="centerY" secondItem="a1z-3o-JFD" secondAttribute="centerY" id="eZH-Py-MCO"/>
+                            <constraint firstItem="a1z-3o-JFD" firstAttribute="trailing" secondItem="ARi-h1-Hvx" secondAttribute="trailing" constant="297" id="kLr-UI-H9F"/>
+                            <constraint firstItem="z99-3x-xZc" firstAttribute="leading" secondItem="a1z-3o-JFD" secondAttribute="leading" constant="10" id="lCs-U5-a0e"/>
+                            <constraint firstItem="H9g-5p-L2y" firstAttribute="top" secondItem="ARi-h1-Hvx" secondAttribute="bottom" constant="472" id="lIi-jK-dqJ"/>
+                            <constraint firstItem="ARi-h1-Hvx" firstAttribute="leading" secondItem="9HC-YF-cmi" secondAttribute="leadingMargin" id="lex-CJ-Hq2"/>
+                            <constraint firstItem="FxX-74-0bn" firstAttribute="leading" secondItem="cYM-Mt-xwz" secondAttribute="trailing" constant="10" id="q3Y-8A-md5"/>
+                            <constraint firstItem="FxX-74-0bn" firstAttribute="top" secondItem="9HC-YF-cmi" secondAttribute="top" constant="52" id="qTa-56-sg8"/>
+                            <constraint firstItem="a1z-3o-JFD" firstAttribute="bottom" secondItem="ARi-h1-Hvx" secondAttribute="bottom" constant="756" id="zGH-oY-35H"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="healImageView" destination="cYM-Mt-xwz" id="NB1-zg-v7O"/>
+                        <outlet property="healPointsTextLabel" destination="FxX-74-0bn" id="hkE-7d-la1"/>
+                        <outlet property="lablePointsScore" destination="z99-3x-xZc" id="7MF-tK-wGy"/>
+                        <outlet property="leftButton" destination="H9g-5p-L2y" id="Imu-as-WYL"/>
+                        <outlet property="rightButton" destination="2EV-ge-K32" id="SBQ-lj-Xa3"/>
+                        <outlet property="startButton" destination="mXC-5L-gx9" id="akM-yA-Vqk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pCO-bk-Foc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1376.8115942028987" y="126.5625"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="hto-CB-cbG">
+            <objects>
+                <viewController storyboardIdentifier="GameViewController" id="go0-a4-Lhf" customClass="GameViewController" customModule="race8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ggx-IQ-hD6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7w-QF-Zs7">
+                                <rect key="frame" x="92.5" y="429" width="229" height="52"/>
+                                <color key="backgroundColor" red="0.71843467319999998" green="0.72187119320000004" blue="0.86078917980000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="229" id="D9L-eu-QXN"/>
+                                    <constraint firstAttribute="height" constant="52" id="bIi-NG-PXA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="25"/>
+                                <color key="tintColor" red="0.80987197160000002" green="0.4598149587" blue="0.3921107251" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="New Game"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="newGameButtonPressed:" destination="go0-a4-Lhf" eventType="touchUpInside" id="3Qo-qF-XuE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9J-w5-JtN">
+                                <rect key="frame" x="92.5" y="601" width="229" height="52"/>
+                                <color key="backgroundColor" red="0.71843467319999998" green="0.72187119320000004" blue="0.86078917980000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="6iX-6L-bxC"/>
+                                    <constraint firstAttribute="width" constant="229" id="AJ6-DA-Scs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="25"/>
+                                <color key="tintColor" red="0.80987197160000002" green="0.4598149587" blue="0.3921107251" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Menu"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="muneButtonPressed:" destination="go0-a4-Lhf" eventType="touchUpInside" id="sdV-Ra-SPP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qW4-5c-Nie">
+                                <rect key="frame" x="115" y="298" width="150" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="bgO-YK-0oN"/>
+                                    <constraint firstAttribute="width" constant="150" id="y1U-VI-D2a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xts-IC-xtL">
+                                <rect key="frame" x="265" y="302" width="23.5" height="32"/>
+                                <color key="tintColor" systemColor="tintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="adI-lw-L6E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4Yq-QC-gWf"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                        <constraints>
+                            <constraint firstItem="V7w-QF-Zs7" firstAttribute="centerY" secondItem="4Yq-QC-gWf" secondAttribute="centerY" id="0l3-kK-coJ"/>
+                            <constraint firstItem="Xts-IC-xtL" firstAttribute="top" secondItem="4Yq-QC-gWf" secondAttribute="top" constant="254" id="1ab-nK-Lxk"/>
+                            <constraint firstItem="O9J-w5-JtN" firstAttribute="centerX" secondItem="4Yq-QC-gWf" secondAttribute="centerX" id="4d0-op-z8Y"/>
+                            <constraint firstItem="Xts-IC-xtL" firstAttribute="leading" secondItem="qW4-5c-Nie" secondAttribute="trailing" id="BkF-Gl-Otd"/>
+                            <constraint firstItem="O9J-w5-JtN" firstAttribute="top" relation="lessThanOrEqual" secondItem="V7w-QF-Zs7" secondAttribute="bottom" constant="122" id="Gp9-Td-wpw"/>
+                            <constraint firstItem="qW4-5c-Nie" firstAttribute="leading" secondItem="4Yq-QC-gWf" secondAttribute="leading" constant="115" id="QCw-a1-AVA"/>
+                            <constraint firstItem="V7w-QF-Zs7" firstAttribute="centerX" secondItem="4Yq-QC-gWf" secondAttribute="centerX" id="e9B-NM-O2k"/>
+                            <constraint firstItem="4Yq-QC-gWf" firstAttribute="bottom" secondItem="O9J-w5-JtN" secondAttribute="bottom" constant="209" id="oUq-Fp-7xx"/>
+                            <constraint firstItem="qW4-5c-Nie" firstAttribute="top" secondItem="4Yq-QC-gWf" secondAttribute="top" constant="250" id="rH8-q5-Ck2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="smQ-9Y-YOQ"/>
+                    <connections>
+                        <outlet property="intLable" destination="Xts-IC-xtL" id="ygI-Vq-S8f"/>
+                        <outlet property="lable" destination="qW4-5c-Nie" id="ZDK-Ez-ceE"/>
+                        <outlet property="menuButton" destination="O9J-w5-JtN" id="QdA-rL-7Yv"/>
+                        <outlet property="newGameButton" destination="V7w-QF-Zs7" id="W3y-NU-8bJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fKi-iL-wHk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2179.7101449275365" y="126.5625"/>
+        </scene>
+        <!--View Options-->
+        <scene sceneID="mRa-Nj-HEv">
+            <objects>
+                <viewController storyboardIdentifier="ViewOptions" id="I5V-0O-BDq" customClass="ViewOptions" customModule="race8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HPe-NG-ECx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYu-uY-06c">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhC-qx-5VV">
+                                        <rect key="frame" x="158" y="329" width="97" height="62"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="backButton:" destination="I5V-0O-BDq" eventType="touchUpInside" id="BaK-VH-8Tj"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AYh-LQ-PXU">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select difficulty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3V-kx-RCW">
+                                                <rect key="frame" x="40" y="155" width="334" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="5q6-OP-dr8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="17"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q27-zc-l7y">
+                                                <rect key="frame" x="40" y="40" width="334" height="17"/>
+                                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kcO-LN-28M">
+                                                <rect key="frame" x="10" y="82" width="394" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="Vfm-yy-neB"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.80987197160000002" green="0.4598149587" blue="0.3921107251" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aRS-hN-Y78">
+                                                <rect key="frame" x="285" y="328.5" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="switchAddFance:" destination="I5V-0O-BDq" eventType="valueChanged" id="6NL-qE-y5U"/>
+                                                </connections>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add a fence" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdA-3g-OQj">
+                                                <rect key="frame" x="117" y="380.5" width="180" height="17"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="180" id="MVq-YA-wp5"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aoi-PU-Qb0">
+                                                <rect key="frame" x="268" y="214.5" width="76" height="50"/>
+                                                <color key="backgroundColor" red="0.27599233490000002" green="0.52605808929999998" blue="0.79010260040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="76" id="BkK-T7-k7C"/>
+                                                    <constraint firstAttribute="height" constant="50" id="TwG-OP-4aP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="25"/>
+                                                <color key="tintColor" red="0.85098040100000005" green="0.90196073060000004" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="3"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="3">
+                                                    <fontDescription key="titleFontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="25"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="speedButtonThree:" destination="I5V-0O-BDq" eventType="touchUpInside" id="76a-xE-OBt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moV-TG-oNX">
+                                                <rect key="frame" x="70" y="214.5" width="76" height="50"/>
+                                                <color key="backgroundColor" red="0.27599233490000002" green="0.52605808929999998" blue="0.79010260040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="76" id="pAs-2v-tN9"/>
+                                                    <constraint firstAttribute="height" constant="50" id="uS7-kW-NUI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="25"/>
+                                                <color key="tintColor" red="0.85098040100000005" green="0.90196073060000004" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="1"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="1">
+                                                    <fontDescription key="titleFontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="25"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="speedButtonOne:" destination="I5V-0O-BDq" eventType="touchUpInside" id="rfX-9t-7pl"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="speed level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5L-TT-SSG">
+                                                <rect key="frame" x="10" y="196" width="394" height="12"/>
+                                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z76-Sh-dq6">
+                                                <rect key="frame" x="169" y="214.5" width="76" height="50"/>
+                                                <color key="backgroundColor" red="0.27599233490000002" green="0.52605808929999998" blue="0.79010260040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="76" id="Wb2-cb-uKN"/>
+                                                    <constraint firstAttribute="height" constant="50" id="nru-Ck-ycI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="26"/>
+                                                <color key="tintColor" red="0.85098040100000005" green="0.90196073060000004" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="2"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="2">
+                                                    <fontDescription key="titleFontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="26"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="speedButtonTwo:" destination="I5V-0O-BDq" eventType="touchUpInside" id="D2I-3G-Rg3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bT1-VM-QFL">
+                                                <rect key="frame" x="157" y="597.5" width="100" height="39"/>
+                                                <color key="backgroundColor" red="0.27599233490000002" green="0.52605808929999998" blue="0.79010260040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="Z4h-On-n73"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="25"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Ok"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Ok">
+                                                    <fontDescription key="titleFontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="25"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="okButtonPressed:" destination="I5V-0O-BDq" eventType="touchUpInside" id="nrb-I5-wtM"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reparRoad" translatesAutoresizingMaskIntoConstraints="NO" id="yjs-82-fgp">
+                                                <rect key="frame" x="177" y="304.5" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="eN4-tZ-Day"/>
+                                                    <constraint firstAttribute="height" constant="60" id="qIh-oh-7Ua"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add accelerometer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cph-Y0-tfx">
+                                                <rect key="frame" x="128" y="438" width="158.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tsw-vw-kjb">
+                                                <rect key="frame" x="182.5" y="465" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="addAccelerometerPressed:" destination="I5V-0O-BDq" eventType="valueChanged" id="L80-iE-Omn"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.85060247450000004" green="0.90555493239999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="cph-Y0-tfx" firstAttribute="top" secondItem="KdA-3g-OQj" secondAttribute="bottom" constant="40.5" id="3uM-Ad-CTm"/>
+                                            <constraint firstItem="yjs-82-fgp" firstAttribute="centerX" secondItem="AYh-LQ-PXU" secondAttribute="centerX" id="5Wa-Kh-40p"/>
+                                            <constraint firstItem="aRS-hN-Y78" firstAttribute="top" secondItem="Aoi-PU-Qb0" secondAttribute="bottom" constant="64" id="674-cl-4eb"/>
+                                            <constraint firstItem="tsw-vw-kjb" firstAttribute="top" secondItem="cph-Y0-tfx" secondAttribute="bottom" constant="10" id="7NF-4V-189"/>
+                                            <constraint firstAttribute="trailing" secondItem="Q27-zc-l7y" secondAttribute="trailing" constant="40" id="7hW-7Y-dRS"/>
+                                            <constraint firstAttribute="trailing" secondItem="KdA-3g-OQj" secondAttribute="trailing" constant="117" id="9KL-fS-SP5"/>
+                                            <constraint firstItem="KdA-3g-OQj" firstAttribute="top" secondItem="yjs-82-fgp" secondAttribute="bottom" constant="16" id="AxD-S4-QLK"/>
+                                            <constraint firstItem="W5L-TT-SSG" firstAttribute="leading" secondItem="AYh-LQ-PXU" secondAttribute="leading" constant="10" id="Cov-s9-f9b"/>
+                                            <constraint firstItem="W5L-TT-SSG" firstAttribute="top" secondItem="Y3V-kx-RCW" secondAttribute="bottom" constant="20" id="EGI-Is-Uvw"/>
+                                            <constraint firstItem="z76-Sh-dq6" firstAttribute="centerX" secondItem="AYh-LQ-PXU" secondAttribute="centerX" id="EKE-9T-S04"/>
+                                            <constraint firstAttribute="trailing" secondItem="bT1-VM-QFL" secondAttribute="trailing" constant="157" id="PcB-Oh-ikx"/>
+                                            <constraint firstItem="z76-Sh-dq6" firstAttribute="leading" secondItem="moV-TG-oNX" secondAttribute="trailing" constant="23" id="Qia-z3-ecw"/>
+                                            <constraint firstItem="Y3V-kx-RCW" firstAttribute="top" secondItem="kcO-LN-28M" secondAttribute="bottom" constant="29" id="Sa4-nz-SNp"/>
+                                            <constraint firstItem="Aoi-PU-Qb0" firstAttribute="leading" secondItem="z76-Sh-dq6" secondAttribute="trailing" constant="23" id="WWj-yT-1LY"/>
+                                            <constraint firstAttribute="trailing" secondItem="kcO-LN-28M" secondAttribute="trailing" constant="10" id="Xen-I6-aD7"/>
+                                            <constraint firstAttribute="trailing" secondItem="W5L-TT-SSG" secondAttribute="trailing" constant="10" id="Z26-cF-5Xp"/>
+                                            <constraint firstItem="KdA-3g-OQj" firstAttribute="leading" secondItem="AYh-LQ-PXU" secondAttribute="leading" constant="117" id="aOU-Ka-HfJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="aRS-hN-Y78" secondAttribute="trailing" constant="80" id="aZY-XX-pBh"/>
+                                            <constraint firstItem="bT1-VM-QFL" firstAttribute="leading" secondItem="AYh-LQ-PXU" secondAttribute="leading" constant="157" id="b8l-Tl-vHf"/>
+                                            <constraint firstItem="Q27-zc-l7y" firstAttribute="top" secondItem="AYh-LQ-PXU" secondAttribute="top" constant="40" id="cly-RE-G8C"/>
+                                            <constraint firstItem="moV-TG-oNX" firstAttribute="centerY" secondItem="z76-Sh-dq6" secondAttribute="centerY" id="gW9-yT-LYX"/>
+                                            <constraint firstItem="Aoi-PU-Qb0" firstAttribute="centerY" secondItem="z76-Sh-dq6" secondAttribute="centerY" id="kFl-P8-t0s"/>
+                                            <constraint firstItem="Y3V-kx-RCW" firstAttribute="leading" secondItem="AYh-LQ-PXU" secondAttribute="leading" constant="40" id="kQ9-Bn-XzD"/>
+                                            <constraint firstAttribute="trailing" secondItem="Y3V-kx-RCW" secondAttribute="trailing" constant="40" id="o3c-QC-J4G"/>
+                                            <constraint firstItem="bT1-VM-QFL" firstAttribute="top" secondItem="KdA-3g-OQj" secondAttribute="bottom" constant="200" id="q9x-EQ-NkC"/>
+                                            <constraint firstItem="cph-Y0-tfx" firstAttribute="centerX" secondItem="AYh-LQ-PXU" secondAttribute="centerX" id="rY4-Ju-iOZ"/>
+                                            <constraint firstItem="kcO-LN-28M" firstAttribute="leading" secondItem="AYh-LQ-PXU" secondAttribute="leading" constant="10" id="tP1-YJ-nGh"/>
+                                            <constraint firstItem="yjs-82-fgp" firstAttribute="top" secondItem="z76-Sh-dq6" secondAttribute="bottom" constant="40" id="ugK-K2-CZE"/>
+                                            <constraint firstItem="Q27-zc-l7y" firstAttribute="leading" secondItem="AYh-LQ-PXU" secondAttribute="leading" constant="40" id="umr-ci-M3Q"/>
+                                            <constraint firstItem="kcO-LN-28M" firstAttribute="top" secondItem="Q27-zc-l7y" secondAttribute="bottom" constant="25" id="vhF-nG-6KV"/>
+                                            <constraint firstItem="z76-Sh-dq6" firstAttribute="top" secondItem="W5L-TT-SSG" secondAttribute="bottom" constant="6.5" id="zbv-dd-e1Z"/>
+                                            <constraint firstItem="tsw-vw-kjb" firstAttribute="centerX" secondItem="AYh-LQ-PXU" secondAttribute="centerX" id="zs9-jn-bDv"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="AYh-LQ-PXU" secondAttribute="bottom" id="0IE-CT-Hml"/>
+                                    <constraint firstAttribute="trailing" secondItem="AYh-LQ-PXU" secondAttribute="trailing" id="9Au-ja-KC2"/>
+                                    <constraint firstAttribute="top" secondItem="AYh-LQ-PXU" secondAttribute="top" id="F8P-ZW-JXT"/>
+                                    <constraint firstItem="AYh-LQ-PXU" firstAttribute="width" secondItem="kYu-uY-06c" secondAttribute="width" id="U2l-AJ-Nbm"/>
+                                    <constraint firstItem="AYh-LQ-PXU" firstAttribute="height" secondItem="kYu-uY-06c" secondAttribute="height" id="hvI-98-1Lv"/>
+                                    <constraint firstItem="AYh-LQ-PXU" firstAttribute="leading" secondItem="kYu-uY-06c" secondAttribute="leading" id="oqH-K6-KxT"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="E0b-h2-X0J"/>
+                        <color key="backgroundColor" red="0.23560864579999999" green="0.44908433440000001" blue="0.67449338329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="kYu-uY-06c" firstAttribute="leading" secondItem="E0b-h2-X0J" secondAttribute="leading" id="DRc-1n-lES"/>
+                            <constraint firstItem="kYu-uY-06c" firstAttribute="top" secondItem="HPe-NG-ECx" secondAttribute="top" id="fYP-vk-dE6"/>
+                            <constraint firstItem="E0b-h2-X0J" firstAttribute="trailing" secondItem="kYu-uY-06c" secondAttribute="trailing" id="swq-K3-AWS"/>
+                            <constraint firstAttribute="bottom" secondItem="kYu-uY-06c" secondAttribute="bottom" id="z3o-SM-eIw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FOr-QD-IUo"/>
+                    <connections>
+                        <outlet property="addAccelerometerSwitch" destination="tsw-vw-kjb" id="SB6-mX-0vu"/>
+                        <outlet property="addFenceLable" destination="KdA-3g-OQj" id="DhE-WY-ZUK"/>
+                        <outlet property="enterNameButton" destination="bT1-VM-QFL" id="snV-x3-fe3"/>
+                        <outlet property="enterYourNameLable" destination="Q27-zc-l7y" id="z93-iX-E8S"/>
+                        <outlet property="lebleTextSpeedLavel" destination="W5L-TT-SSG" id="phC-3m-rsn"/>
+                        <outlet property="scrollView" destination="kYu-uY-06c" id="yIP-Kz-ZQA"/>
+                        <outlet property="selectDifficultyLable" destination="Y3V-kx-RCW" id="IQb-Yl-EkI"/>
+                        <outlet property="speedLavelLable" destination="W5L-TT-SSG" id="hd8-ET-ykQ"/>
+                        <outlet property="switchUI" destination="aRS-hN-Y78" id="hPo-zo-XSH"/>
+                        <outlet property="textFieldUserName" destination="kcO-LN-28M" id="HfX-1D-CsV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QvH-Gh-yr0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="582.60869565217399" y="810.9375"/>
+        </scene>
+        <!--View Records-->
+        <scene sceneID="iD7-WK-yPx">
+            <objects>
+                <viewController storyboardIdentifier="ViewRecords" id="Cc7-Yg-hCd" customClass="ViewRecords" customModule="race8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3cW-uC-is1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIH-lM-h8C">
+                                <rect key="frame" x="20" y="44" width="97" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="backButton:" destination="Cc7-Yg-hCd" eventType="touchUpInside" id="hkC-K0-cnI"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mdo-Td-ai5">
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xx1-rA-fvp"/>
+                        <color key="backgroundColor" red="0.23560864579999999" green="0.44908433440000001" blue="0.67449338329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="mdo-Td-ai5" firstAttribute="leading" secondItem="xx1-rA-fvp" secondAttribute="leading" id="LwL-SQ-SSn"/>
+                            <constraint firstItem="xx1-rA-fvp" firstAttribute="trailing" secondItem="mdo-Td-ai5" secondAttribute="trailing" id="TZX-hX-wP2"/>
+                            <constraint firstItem="mdo-Td-ai5" firstAttribute="top" secondItem="xx1-rA-fvp" secondAttribute="top" id="XAD-bf-4Fv"/>
+                            <constraint firstItem="xx1-rA-fvp" firstAttribute="bottom" secondItem="mdo-Td-ai5" secondAttribute="bottom" id="bpF-hK-vVD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5We-ke-Yue"/>
+                    <connections>
+                        <outlet property="tableView" destination="mdo-Td-ai5" id="U3s-Oi-sTX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jSq-Y5-gnD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1373.913043478261" y="809.59821428571422"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="6f846c6a755d3d001674156b46153813--space-wallpaper-phone-backgrounds" width="640" height="1136"/>
+        <image name="heal" width="645" height="536"/>
+        <image name="reparRoad" width="205" height="188"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

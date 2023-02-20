@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  race8
+
+  Created by Pavel Nesterenko on 4.12.22.
+  
+*/
+
+"start" = "start";
+"options" = "options";
+"records" = "records";
+"new game" = "new game";
+"menu" = "menu";
+"score" = "score";
+"user" = "user";
+"enter your name" = "enter your name";
+"select difficulty" = "select difficulty";
+"add a fence" = "add a fence";
+"level 1" = "level 1";
+"level 2" = "level 2";
+"level 3" = "level 3";
+
+

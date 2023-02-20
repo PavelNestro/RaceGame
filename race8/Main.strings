@@ -1,0 +1,105 @@
+
+/* Class = "UIButton"; configuration.title = "->"; ObjectID = "2EV-ge-K32"; */
+"2EV-ge-K32.configuration.title" = "->";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "2EV-ge-K32"; */
+"2EV-ge-K32.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Records"; ObjectID = "7nf-29-40C"; */
+"7nf-29-40C.configuration.title" = "Records";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7nf-29-40C"; */
+"7nf-29-40C.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Options"; ObjectID = "8RV-fg-e52"; */
+"8RV-fg-e52.configuration.title" = "Options";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "8RV-fg-e52"; */
+"8RV-fg-e52.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ARi-h1-Hvx"; */
+"ARi-h1-Hvx.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "3"; ObjectID = "Aoi-PU-Qb0"; */
+"Aoi-PU-Qb0.configuration.title" = "3";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Aoi-PU-Qb0"; */
+"Aoi-PU-Qb0.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "<-"; ObjectID = "H9g-5p-L2y"; */
+"H9g-5p-L2y.configuration.title" = "<-";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "H9g-5p-L2y"; */
+"H9g-5p-L2y.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "add a fence"; ObjectID = "KdA-3g-OQj"; */
+"KdA-3g-OQj.text" = "add a fence";
+
+/* Class = "UIButton"; configuration.title = "Menu"; ObjectID = "O9J-w5-JtN"; */
+"O9J-w5-JtN.configuration.title" = "Menu";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "O9J-w5-JtN"; */
+"O9J-w5-JtN.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Enter your name"; ObjectID = "Q27-zc-l7y"; */
+"Q27-zc-l7y.text" = "Enter your name";
+
+/* Class = "UIButton"; configuration.title = "New Game"; ObjectID = "V7w-QF-Zs7"; */
+"V7w-QF-Zs7.configuration.title" = "New Game";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "V7w-QF-Zs7"; */
+"V7w-QF-Zs7.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Speed level"; ObjectID = "W5L-TT-SSG"; */
+"W5L-TT-SSG.text" = "Speed level";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Xts-IC-xtL"; */
+"Xts-IC-xtL.text" = "0";
+
+/* Class = "UILabel"; text = "select difficulty"; ObjectID = "Y3V-kx-RCW"; */
+"Y3V-kx-RCW.text" = "select difficulty";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "bIH-lM-h8C"; */
+"bIH-lM-h8C.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Ok"; ObjectID = "bT1-VM-QFL"; */
+"bT1-VM-QFL.configuration.title" = "Ok";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "bT1-VM-QFL"; */
+"bT1-VM-QFL.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "enter name"; ObjectID = "kcO-LN-28M"; */
+"kcO-LN-28M.placeholder" = "enter name";
+
+/* Class = "UIButton"; configuration.title = "Start"; ObjectID = "lEe-li-a5l"; */
+"lEe-li-a5l.configuration.title" = "Start";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "lEe-li-a5l"; */
+"lEe-li-a5l.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Start"; ObjectID = "mXC-5L-gx9"; */
+"mXC-5L-gx9.configuration.title" = "Start";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "mXC-5L-gx9"; */
+"mXC-5L-gx9.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "1"; ObjectID = "moV-TG-oNX"; */
+"moV-TG-oNX.configuration.title" = "1";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "moV-TG-oNX"; */
+"moV-TG-oNX.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Score"; ObjectID = "qW4-5c-Nie"; */
+"qW4-5c-Nie.text" = "Score";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "yhC-qx-5VV"; */
+"yhC-qx-5VV.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "2"; ObjectID = "z76-Sh-dq6"; */
+"z76-Sh-dq6.configuration.title" = "2";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "z76-Sh-dq6"; */
+"z76-Sh-dq6.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "z99-3x-xZc"; */
+"z99-3x-xZc.text" = "0";
