@@ -13,13 +13,12 @@ class ScoreTableViewCell: UITableViewCell {
 
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var textLable: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
+
+    func configure(with model: User) {
+        
+        self.textLable.text = "User: \(model.name), Score: \(model.score), \(model.date)"
+        
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
 
 }
