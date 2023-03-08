@@ -20,6 +20,8 @@
 		F03A5CFF29684A42006D81F1 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F03A5CFE29684A42006D81F1 /* FirebaseAnalyticsSwift */; };
 		F03F415C2949FBA70054B984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F03F415B2949FBA70054B984 /* Assets.xcassets */; };
 		F049FD1E29B1FB3A00BF9D58 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049FD1D29B1FB3A00BF9D58 /* TableViewModel.swift */; };
+		F049FD5A29B394E600BF9D58 /* ChooseCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049FD5929B394E600BF9D58 /* ChooseCarViewController.swift */; };
+		F049FD5C29B3964900BF9D58 /* CarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049FD5B29B3964900BF9D58 /* CarCollectionView.swift */; };
 		F0836C0828D72461005E68F4 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0836C0628D72461005E68F4 /* ScoreTableViewCell.swift */; };
 		F0836C0928D72461005E68F4 /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0836C0728D72461005E68F4 /* ScoreTableViewCell.xib */; };
 		F08505A2293D34DB0042520E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F08505A4293D34DB0042520E /* Localizable.strings */; };
@@ -54,6 +56,9 @@
 		F03A5CF9296848D7006D81F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F03F415B2949FBA70054B984 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F049FD1D29B1FB3A00BF9D58 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
+		F049FD5929B394E600BF9D58 /* ChooseCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCarViewController.swift; sourceTree = "<group>"; };
+		F049FD5B29B3964900BF9D58 /* CarCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCollectionView.swift; sourceTree = "<group>"; };
+		F049FD9929B7D5DE00BF9D58 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F0836C0628D72461005E68F4 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		F0836C0728D72461005E68F4 /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
 		F08505A0293D34B80042520E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Main.storyboard; path = Main.strings; sourceTree = "<group>"; };
@@ -131,6 +136,7 @@
 				F0F5085528BFCE03001C6FFC /* ViewStart.swift */,
 				F0F5085A28BFCE03001C6FFC /* ViewOptions.swift */,
 				F0F5084F28BFCE03001C6FFC /* ViewRecords.swift */,
+				F049FD5929B394E600BF9D58 /* ChooseCarViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -160,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				F0836C0628D72461005E68F4 /* ScoreTableViewCell.swift */,
+				F049FD5B29B3964900BF9D58 /* CarCollectionView.swift */,
 				F0836C0728D72461005E68F4 /* ScoreTableViewCell.xib */,
 			);
 			path = Xib;
@@ -418,9 +425,11 @@
 				F0836C0828D72461005E68F4 /* ScoreTableViewCell.swift in Sources */,
 				F08505A8293D35C50042520E /* Strings+Localizable.swift in Sources */,
 				F0F5087D28BFCF95001C6FFC /* UIFonta+CustomFonts.swift in Sources */,
+				F049FD5C29B3964900BF9D58 /* CarCollectionView.swift in Sources */,
 				F049FD1E29B1FB3A00BF9D58 /* TableViewModel.swift in Sources */,
 				F0F5086428BFCE03001C6FFC /* ViewControllerFactory.swift in Sources */,
 				F0F5087A28BFCF95001C6FFC /* UIview + shadow.swift in Sources */,
+				F049FD5A29B394E600BF9D58 /* ChooseCarViewController.swift in Sources */,
 				F0F5086628BFCE03001C6FFC /* ViewOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +441,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F08505A5293D34DF0042520E /* en */,
+				F049FD9929B7D5DE00BF9D58 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

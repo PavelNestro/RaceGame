@@ -25,7 +25,7 @@ class ViewRecords: UIViewController {
         let nib =  UINib(nibName: String(describing: ScoreTableViewCell.self), bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: ScoreTableViewCell.identifier)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(addButtonPressed))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteRecords))
         self.navigationItem.rightBarButtonItem?.tintColor = .white
         
         RealmManager.sheard.addPersonsChange {
@@ -43,7 +43,7 @@ class ViewRecords: UIViewController {
 
     }
 
-    @objc func addButtonPressed() {
+    @objc func deleteRecords() {
         try! RealmManager.sheard.realm.write({
             RealmManager.sheard.realm.deleteAll()
         })

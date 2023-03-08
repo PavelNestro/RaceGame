@@ -8,7 +8,8 @@
 import Foundation
 class Settings: Codable {
     static let sheard = Settings()
-    var difficult = 0.8
+    var difficult = 1.4
+    var nameCar = "pickUp"
 
     func save(_ user: Settings, _ forKey: UserDefaultsKeys) {
         let arrayData = try? JSONEncoder().encode(user)

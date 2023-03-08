@@ -10,6 +10,8 @@ import AVKit
 import RealmSwift
 
 class ViewOptions: UIViewController {
+
+    @IBOutlet weak var chooseCarButton: UIButton!
     @IBOutlet weak var speedLavelLable: UILabel!
     @IBOutlet weak var addFenceLable: UILabel!
     @IBOutlet weak var selectDifficultyLable: UILabel!
@@ -146,24 +148,30 @@ NotificationCenter.default.addObserver(self,
 
     @IBAction func speedButtonOne(_ sender: UIButton) {
         lableLevelName  = "level 1"
-        print("speed 0.8")
-        settings.difficult = 0.8
+        print("speed 1.4")
+        settings.difficult = 1.4
 
     }
 
     @IBAction func speedButtonTwo(_ sender: UIButton) {
         lableLevelName  = "level 2"
-        print("speed 0.6")
-        settings.difficult = 0.6
+        print("speed 1.2")
+        settings.difficult = 1.2
 
     }
 
     @IBAction func speedButtonThree(_ sender: UIButton) {
         lableLevelName  = "level 3"
-        print("speed 0.5")
-        settings.difficult = 0.5
+        print("speed 1.0")
+        settings.difficult = 1.0
     }
-
+    
+    
+    @IBAction func chooseCarButtonPressed(_ sender: Any) {
+        let viewController = ViewControllerFactory.sheard.createChooseCarViewController()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     func soundButtonPressed() {
         if let audioFileURL = Bundle.main.url(forResource: "audioButtonBack", withExtension: "mp3") {
             do {
@@ -182,6 +190,7 @@ NotificationCenter.default.addObserver(self,
         enterYourNameLable.text = "enter your name".localized.capitalized
         addFenceLable.text = "add a fence".localized.capitalized
         selectDifficultyLable.text = "select difficulty".localized.capitalized
+        chooseCarButton.titleLabel?.text = "choose a car".localized.capitalized
     }
 
 

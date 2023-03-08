@@ -51,5 +51,13 @@ class ViewControllerFactory {
         }
         return viewController
     }
+    
+    func createChooseCarViewController() -> ChooseCarViewController {
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "ChooseCarViewController")
+                as? ChooseCarViewController else {
+            return ChooseCarViewController()
+        }
+        return viewController
+    }
 
 }

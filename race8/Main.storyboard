@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -28,7 +29,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gy7-DB-nfs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-806" y="128"/>
+            <point key="canvasLocation" x="-307" y="127"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="d61-Wl-kjD">
@@ -128,6 +129,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z99-3x-xZc">
+                                <rect key="frame" x="10" y="52" width="11.5" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="K9s-Km-u2U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARi-h1-Hvx">
                                 <rect key="frame" x="20" y="92" width="97" height="14"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -193,19 +203,10 @@
                                     <constraint firstAttribute="height" constant="30" id="i3i-7T-F5G"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxX-74-0bn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxX-74-0bn">
                                 <rect key="frame" x="388" y="52" width="16" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="NAi-ZJ-Ztn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="20"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z99-3x-xZc">
-                                <rect key="frame" x="10" y="52" width="11.5" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="K9s-Km-u2U"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -343,6 +344,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKi-iL-wHk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2179.7101449275365" y="126.5625"/>
+        </scene>
+        <!--Choose Car View Controller-->
+        <scene sceneID="RuN-uS-Lc3">
+            <objects>
+                <viewController storyboardIdentifier="ChooseCarViewController" id="DZF-fA-Kbx" customClass="ChooseCarViewController" customModule="race8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4A2-xE-hFg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ncr-iW-SW7">
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <color key="backgroundColor" red="0.85098040100000005" green="0.90196073060000004" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="i7V-JN-EvO">
+                                    <size key="itemSize" width="233" height="186"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CarCollectionView" id="Hpp-Th-hpH" customClass="CarCollectionView" customModule="race8" customModuleProvider="target">
+                                        <rect key="frame" x="90.5" y="0.0" width="233" height="186"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0Ft-pz-W6k">
+                                            <rect key="frame" x="0.0" y="0.0" width="233" height="186"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HcG-TX-ole">
+                                                    <rect key="frame" x="5" y="5" width="223" height="181"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.85098040100000005" green="0.90196073060000004" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstItem="HcG-TX-ole" firstAttribute="top" secondItem="0Ft-pz-W6k" secondAttribute="top" constant="5" id="A1C-Hl-zN8"/>
+                                                <constraint firstAttribute="trailing" secondItem="HcG-TX-ole" secondAttribute="trailing" constant="5" id="Qsz-lo-gbT"/>
+                                                <constraint firstItem="HcG-TX-ole" firstAttribute="leading" secondItem="0Ft-pz-W6k" secondAttribute="leading" constant="5" id="rFO-wd-F8I"/>
+                                                <constraint firstAttribute="bottom" secondItem="HcG-TX-ole" secondAttribute="bottom" id="sRS-3A-fbV"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="233" height="186"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="HcG-TX-ole" id="idw-ut-S29"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Y7y-3X-eNt"/>
+                        <color key="backgroundColor" red="0.23560864579999999" green="0.44908433440000001" blue="0.67449338329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Ncr-iW-SW7" firstAttribute="top" secondItem="Y7y-3X-eNt" secondAttribute="top" id="0MZ-oT-2t7"/>
+                            <constraint firstItem="Ncr-iW-SW7" firstAttribute="leading" secondItem="Y7y-3X-eNt" secondAttribute="leading" id="7BL-tL-bGZ"/>
+                            <constraint firstItem="Y7y-3X-eNt" firstAttribute="trailing" secondItem="Ncr-iW-SW7" secondAttribute="trailing" id="KeU-3a-X8v"/>
+                            <constraint firstItem="Y7y-3X-eNt" firstAttribute="bottom" secondItem="Ncr-iW-SW7" secondAttribute="bottom" id="hrt-bK-tyj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Ncr-iW-SW7" id="8S0-py-E2A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dGq-RI-LfW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-197.10144927536234" y="810.9375"/>
         </scene>
         <!--View Options-->
         <scene sceneID="mRa-Nj-HEv">
@@ -523,9 +586,30 @@
                                                     <action selector="addAccelerometerPressed:" destination="I5V-0O-BDq" eventType="valueChanged" id="L80-iE-Omn"/>
                                                 </connections>
                                             </switch>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uc6-Np-071">
+                                                <rect key="frame" x="127" y="516" width="160" height="41.5"/>
+                                                <color key="backgroundColor" red="0.27599233490000002" green="0.52605808929999998" blue="0.79010260040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="160" id="iLS-x7-6El"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.85098040100000005" green="0.90196073060000004" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Сhoose a car">
+                                                    <fontDescription key="titleFontDescription" name="GogonoCocoaMochiCyrillic" family="Gogono Cocoa Mochi Cyrillic" pointSize="20"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="chooseCarButtonPressed:" destination="I5V-0O-BDq" eventType="touchUpInside" id="YLT-G6-hLa"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.85060247450000004" green="0.90555493239999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
+                                            <constraint firstItem="bT1-VM-QFL" firstAttribute="top" secondItem="uc6-Np-071" secondAttribute="bottom" constant="40" id="35Z-Nx-QcY"/>
                                             <constraint firstItem="cph-Y0-tfx" firstAttribute="top" secondItem="KdA-3g-OQj" secondAttribute="bottom" constant="40.5" id="3uM-Ad-CTm"/>
                                             <constraint firstItem="yjs-82-fgp" firstAttribute="centerX" secondItem="AYh-LQ-PXU" secondAttribute="centerX" id="5Wa-Kh-40p"/>
                                             <constraint firstItem="aRS-hN-Y78" firstAttribute="top" secondItem="Aoi-PU-Qb0" secondAttribute="bottom" constant="64" id="674-cl-4eb"/>
@@ -545,7 +629,9 @@
                                             <constraint firstItem="KdA-3g-OQj" firstAttribute="leading" secondItem="AYh-LQ-PXU" secondAttribute="leading" constant="117" id="aOU-Ka-HfJ"/>
                                             <constraint firstAttribute="trailing" secondItem="aRS-hN-Y78" secondAttribute="trailing" constant="80" id="aZY-XX-pBh"/>
                                             <constraint firstItem="bT1-VM-QFL" firstAttribute="leading" secondItem="AYh-LQ-PXU" secondAttribute="leading" constant="157" id="b8l-Tl-vHf"/>
+                                            <constraint firstItem="uc6-Np-071" firstAttribute="top" secondItem="tsw-vw-kjb" secondAttribute="bottom" constant="20" id="c2j-Yz-ffg"/>
                                             <constraint firstItem="Q27-zc-l7y" firstAttribute="top" secondItem="AYh-LQ-PXU" secondAttribute="top" constant="40" id="cly-RE-G8C"/>
+                                            <constraint firstItem="uc6-Np-071" firstAttribute="centerX" secondItem="AYh-LQ-PXU" secondAttribute="centerX" id="eBr-dj-zXH"/>
                                             <constraint firstItem="moV-TG-oNX" firstAttribute="centerY" secondItem="z76-Sh-dq6" secondAttribute="centerY" id="gW9-yT-LYX"/>
                                             <constraint firstItem="Aoi-PU-Qb0" firstAttribute="centerY" secondItem="z76-Sh-dq6" secondAttribute="centerY" id="kFl-P8-t0s"/>
                                             <constraint firstItem="Y3V-kx-RCW" firstAttribute="leading" secondItem="AYh-LQ-PXU" secondAttribute="leading" constant="40" id="kQ9-Bn-XzD"/>
@@ -584,6 +670,7 @@
                     <connections>
                         <outlet property="addAccelerometerSwitch" destination="tsw-vw-kjb" id="SB6-mX-0vu"/>
                         <outlet property="addFenceLable" destination="KdA-3g-OQj" id="DhE-WY-ZUK"/>
+                        <outlet property="chooseCarButton" destination="uc6-Np-071" id="mau-l2-nl2"/>
                         <outlet property="enterNameButton" destination="bT1-VM-QFL" id="snV-x3-fe3"/>
                         <outlet property="enterYourNameLable" destination="Q27-zc-l7y" id="z93-iX-E8S"/>
                         <outlet property="lebleTextSpeedLavel" destination="W5L-TT-SSG" id="phC-3m-rsn"/>
