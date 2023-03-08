@@ -13,4 +13,5 @@ case animationObcastle = "Animation_Obcastle"
 case arrayUser = "User_array"
 case accelerometer = "Accelerometer"
 case userOptions = "User_options"
+case nameCar = "name_car"
 }

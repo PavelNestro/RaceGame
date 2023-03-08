@@ -17,21 +17,23 @@ class ViewStart: UIViewController {
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
-    let dictImageWood: [String: UIImage?] = [
-    "wood3": UIImage(named: "reparRoad"), "wood2": UIImage(named: "wood2")
-]
+
+    let arrayCar = [UIImage(named: "carRed"), UIImage(named: "carYellow"), UIImage(named: "carGreen"), UIImage(named: "carGrey"), UIImage(named: "carBlue")]
+    let arrayCarOpposite = [UIImage(named: "orangeCar"), UIImage(named: "policeCar"), UIImage(named: "redWhiteCar"), UIImage(named: "salatCar")]
+    let stoneArray = [UIImage(named: "stoneOne"), UIImage(named: "stoneTwo")]
+    
     var currentAudioPlayer: AVAudioPlayer?
     static let provider = ViewStart()
     let motionManager = CMMotionManager()
     let roadLine = UIView()
-    let roadView = UIView()
+    let viewSecond = UIView()
+    let roadView = UIImageView()
     var imageCar = UIImageView()
-    let greenView = UIImageView()
     let greenViewSecond = UIImageView()
-    let step: CGFloat = 80
-    var pointHeal = 3
+    let step: CGFloat = 40
+    var pointHeal = 9
     var points = 0
-    var timer = 0.8
+    var timer = 1.4
     var timerShouldInvalidate = false
     var animationRepairObcastels = false
     var accelerometer = false
@@ -50,7 +52,7 @@ class ViewStart: UIViewController {
             startButton.setTitle("start".localized, for: .normal)
             loadOptionsForGame()
             loadUserDifficult()
-            viewGreen()
+            setupClearView()
             setupRoadView()
             setupCarImageView(imageCar)
             view.addSubview(healImageView)
@@ -74,27 +76,28 @@ class ViewStart: UIViewController {
                 self.leftButton.isEnabled = false
             }
         }
-        self.moveGreenViewSecond()
-          Timer.scheduledTimer(withTimeInterval: timer, repeats: true) { timer in
-                       self.moveGreenView()
-                       self.moveRoadLine()
-                       self.moveObstacleView()
-                       self.moveWoodView()
-                    if self.timerShouldInvalidate {
-                       timer.invalidate()  // эта функция остановит таймер
-                   }
-
-                }
+            Timer.scheduledTimer(withTimeInterval: self.timer, repeats: false) { timer in
+                self.moveRoadViewSecond()
+        }
+            Timer.scheduledTimer(withTimeInterval: self.timer, repeats: true) { timer in
+                self.moveRoadView()
+                self.moveRandomCar()
+                self.moveRandomCarOpposite()
+                self.moveStoneView()
+                if self.timerShouldInvalidate {
+                    timer.invalidate()  // эта функция остановит таймер
+            }
+        }
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in
             if self.animationRepairObcastels == true {
-                       self.moveRepairObcastelsView()
-                       self.moveBigObstacleView()
+                self.moveRepairObcastelsView()
+                self.moveBigObstacleView()
             }
             if self.timerShouldInvalidate {
-               timer.invalidate()
-           }
+                timer.invalidate()
+            }
 
-        }
+    }
     }
 
     @IBAction func rightButtonAction(_ sender: UIButton) {
@@ -133,60 +136,51 @@ class ViewStart: UIViewController {
             }
         }
     }
+    func moveRoadViewSecond() {
+        roadView.image = UIImage(named: "road2") // "greenView2"
+        roadView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
 
-    func viewGreen() {
-        greenView.image = UIImage(named: "greenView2") // "greenView2"
-        greenView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height  )
-        greenView.backgroundColor = .green
-        view.addSubview(greenView)
-    }
-
-    //  вью в началае старта которая уезжает и исчезает
-    func moveGreenViewSecond() {
-        greenViewSecond.image = UIImage(named: "greenView2") // "greenView2"
-        greenViewSecond.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        greenViewSecond.backgroundColor = .green
-        self.greenView.addSubview(self.greenViewSecond)
-        UIView.animate(withDuration: 2.9, delay: 0.8, options: [.curveLinear]) {
-            self.greenViewSecond.frame.origin.y = self.greenView.frame.height
+       viewSecond.addSubview(roadView)
+        UIView.animate(withDuration: 1.6, delay: 0, options: [.curveLinear]) {
+            self.roadView.frame.origin.y = self.view.frame.height
         } completion: { (_) in
-            self.greenViewSecond.removeFromSuperview()
+            self.roadView.removeFromSuperview()
         }
     }
+    
+    func moveRoadView() {
+        let roadView = UIImageView()
+        roadView.image = UIImage(named: "road")
+        roadView.frame.size = CGSize(width: view.frame.width, height: view.frame.height)
+        roadView.frame.origin.x = 0
+        roadView.frame.origin.y = -roadView.frame.height
+        viewSecond.addSubview(roadView)
 
-    func moveGreenView() {
-        let greenView = UIImageView()
-        greenView.image = UIImage(named: "greenView2")
-        greenView.frame.size = CGSize(width: view.frame.width, height: view.frame.height     )
-        greenView.frame.origin.x = 0
-        greenView.frame.origin.y = -greenView.frame.height
-        self.greenView.addSubview(greenView)
-
-        UIView.animate(withDuration: 5.8, delay: 0, options: [.curveLinear]) { // 5.8
-greenView.frame.origin.y = self.greenView.frame.maxY
+        UIView.animate(withDuration: 3, delay: 0, options: [.curveLinear]) { // 4
+            roadView.frame.origin.y = self.view.frame.maxY
+            self.score()
         } completion: { _ in
 
-            greenView.removeFromSuperview()
+            roadView.removeFromSuperview()
             print("deleted greenView")
         }
     }
+    
+    func setupClearView() {
+        viewSecond.frame = CGRect(x: 0, y: 0, width: view.frame.width , height: view.frame.height)
+        viewSecond.backgroundColor = .clear
+        view.addSubview(viewSecond)
+    }
 
     func setupRoadView() {
-        roadView.frame = CGRect(x: 40, y: 0, width: view.frame.width - 80, height: view.frame.height)
-        roadView.backgroundColor = .systemGray
-        view.addSubview(roadView)
-        roadView.addSubview(startButton)
-        roadView.addSubview(leftButton)
-        roadView.addSubview(rightButton)
+        roadView.image = UIImage(named: "road2")
+        roadView.frame = CGRect(x: 0, y: 0, width: view.frame.width , height: view.frame.height)
+        viewSecond.addSubview(roadView)
+        view.addSubview(startButton)
+        view.addSubview(leftButton)
+        view.addSubview(rightButton)
     }
-    // Создать Линию!!!!!!!!
-    func setupLineView(_ line: UIView) {
-        line.frame.size = CGSize(width: 10, height: 50)
-        line.frame.origin.x = self.roadView.frame.width / 2 - line.frame.width / 2
-        line.frame.origin.y = -line.frame.height
-        line.backgroundColor = .white
-        self.roadView.addSubview(line)
-    }
+    
     // тряска автомобиля
     func shakeCarImageView() {
         let shake: CABasicAnimation = CABasicAnimation(keyPath: "position")
@@ -220,9 +214,18 @@ greenView.frame.origin.y = self.greenView.frame.maxY
     }
 
     // создать картинку препятствия
-    func setupImageObstacles(_ view: UIImageView ) {
-        view.frame.size = CGSize(width: 80, height: 20)
-        let xOrigin = Double.random(in: 1..<self.view.frame.width - 60.0)
+    func setupRandomCar(_ view: UIImageView ) {
+        view.frame.size = CGSize(width: 40, height: 80)
+        let xOrigin = Double.random(in: self.view.frame.width / 2.5..<self.view.frame.width - 100.0)
+        view.frame.origin.x = xOrigin
+        view.frame.origin.y = -view.frame.height
+        view.backgroundColor = .clear
+        // self.greenView.addSubview(view)
+        self.view.addSubview(view)
+    }
+    func setupRandomCarOpposite(_ view: UIImageView ) {
+        view.frame.size = CGSize(width: 40, height: 80)
+        let xOrigin = Double.random(in: view.frame.origin.x + 60.0..<self.view.frame.width / 2.8)
         view.frame.origin.x = xOrigin
         view.frame.origin.y = -view.frame.height
         view.backgroundColor = .clear
@@ -241,44 +244,30 @@ greenView.frame.origin.y = self.greenView.frame.maxY
     }
     // Создать Машину
     func setupCarImageView(_ imageCar: UIImageView) {
-        imageCar.image = UIImage(named: "pickUp")
+        let nameCar = Settings.sheard.load(.nameCar)
+        imageCar.image = UIImage(named: nameCar.nameCar)
         imageCar.frame.size = CGSize(width: 40, height: 80)
         imageCar.frame.origin.x = view.frame.width / 2 - imageCar.frame.width / 2
         imageCar.frame.origin.y = roadView.frame.height - 200
-        self.view.addSubview(imageCar)
-        imageCar.bringSubviewToFront(roadLine)
+        view.addSubview(imageCar)
+        imageCar.bringSubviewToFront(greenViewSecond)
     }
 
     // Движение кустарников
-    func moveWoodView() {
-        let imageWood = UIImageView()
-        let imageWood2 = UIImageView()
-         setupImageWood(imageWood, imageWood2)
-        imageWood.image = UIImage(named: "wood1")
-        imageWood2.image = UIImage(named: "wood2")
-        UIView.animate(withDuration: 3, delay: 0, options: [.curveLinear]) {
-            imageWood.frame.origin.y = self.view.frame.maxY
-            imageWood2.frame.origin.y = self.view.frame.maxY
+    func moveStoneView() {
+        let viewStone = UIImageView()
+        if let randomStone = stoneArray.randomElement() {
+            viewStone.image = randomStone
+        }
+        setupStoneView(viewStone)
+
+        UIView.animate(withDuration: 1.6, delay: 0, options: [.curveLinear]) {
+            viewStone.frame.origin.y = self.view.frame.maxY
         } completion: { _ in
-            print("deleted")
-         imageWood.removeFromSuperview()
-            imageWood2.removeFromSuperview()
+            print("deletedStone")
+            viewStone.removeFromSuperview()
         }
 
-    }
-
-   // Движение Линии
-    func moveRoadLine() {
-        let roadv = UIView()
-        setupLineView(roadv)
-        UIView.animate(withDuration: 3, delay: 0, options: [.curveLinear]) {
-        roadv.frame.origin.y = self.roadView.frame.height
-            self.score()
-
-        } completion: { _ in
-            self.setupLineView(roadv)
-            roadv.removeFromSuperview()
-        }
     }
 
     // Crush Car
@@ -313,7 +302,7 @@ greenView.frame.origin.y = self.greenView.frame.maxY
         let score = "score"
         self.points += 1
         self.lablePointsScore.text = "\(score.localized.capitalized): \(self.points)"
-        roadView.addSubview(self.lablePointsScore)
+        view.addSubview(self.lablePointsScore)
         if self.points == 5 {
             print("SCORE")
             self.timer = 0.5
@@ -321,40 +310,79 @@ greenView.frame.origin.y = self.greenView.frame.maxY
     }
 
     // Движения Препятствия бревно горизонт !!!!!!!!
-    func moveObstacleView() {
-         let obcastleImageView = UIImageView()
-        obcastleImageView.image = UIImage(named: "obcastleOne")
-        self.setupImageObstacles(obcastleImageView)
+    func moveRandomCar() {
+        let viewCar = UIImageView()
+        if let randomCar = arrayCar.randomElement() {
+            viewCar.image = randomCar
+        }
+        self.setupRandomCar(viewCar)
 
-        Timer.scheduledTimer(withTimeInterval: 0.26, repeats: true) { (timer1) in  // 0.032
+        Timer.scheduledTimer(withTimeInterval: 0.12, repeats: true) { (timer1) in  // 0.032
 
-            UIView.animate(withDuration: 0.26, delay: 0, options: [.curveLinear]) {
-                obcastleImageView.frame.origin.y += self.step
-                if obcastleImageView.frame.intersects(self.imageCar.frame) {
+            UIView.animate(withDuration: 0.12, delay: 0, options: [.curveLinear]) {
+                viewCar.frame.origin.y += self.step
+                if viewCar.frame.intersects(self.imageCar.frame) {
                     if self.intersect == false { // при прыжке авто выключаем бессмертие
                         self.view.bringSubviewToFront(self.imageCar)
                     } else {
                         self.shakeCarImageView()
                         UIView.animate(withDuration: 3, delay: 0, options: []) {
-                                self.imageCar.alpha = 0.5
+                                viewCar.alpha = 0.5
                             } completion: { _ in
-                                self.imageCar.alpha = 1
+                                viewCar.alpha = 1
 
                             }
                     }
                 }
             } completion: { _ in
-                if obcastleImageView.frame.origin.y > self.view.frame.height {
-                    obcastleImageView.removeFromSuperview()
+                if viewCar.frame.origin.y > self.view.frame.height {
+                    viewCar.removeFromSuperview()
         }
     }
                 if self.timerShouldInvalidate {
                     self.imageCar.removeFromSuperview()
-                    obcastleImageView.removeFromSuperview()
+                    viewCar.removeFromSuperview()
                 timer1.invalidate()
             }
         }
     }
+    func moveRandomCarOpposite() {
+        let viewCar = UIImageView()
+        if let randomCar = arrayCarOpposite.randomElement() {
+            viewCar.image = randomCar
+        }
+        self.setupRandomCarOpposite(viewCar)
+
+        Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer1) in  // 0.032
+
+            UIView.animate(withDuration: 0.05, delay: 0, options: [.curveLinear]) {
+                viewCar.frame.origin.y += self.step
+                if viewCar.frame.intersects(self.imageCar.frame) {
+                    if self.intersect == false { // при прыжке авто выключаем бессмертие
+                        self.view.bringSubviewToFront(self.imageCar)
+                    } else {
+                        self.shakeCarImageView()
+                        UIView.animate(withDuration: 3, delay: 0, options: []) {
+                                viewCar.alpha = 0.5
+                            } completion: { _ in
+                                viewCar.alpha = 1
+
+                            }
+                    }
+                }
+            } completion: { _ in
+                if viewCar.frame.origin.y > self.view.frame.height {
+                    viewCar.removeFromSuperview()
+        }
+    }
+                if self.timerShouldInvalidate {
+                    self.imageCar.removeFromSuperview()
+                    viewCar.removeFromSuperview()
+                timer1.invalidate()
+            }
+        }
+    }
+
 
     func moveBigObstacleView() {
         let obstacleImageView = UIImageView()
@@ -391,10 +419,10 @@ greenView.frame.origin.y = self.greenView.frame.maxY
     func moveRepairObcastelsView() {
         let viewRepairRoad = UIImageView()
         setupRepairObcastle(viewRepairRoad)
-        viewRepairRoad.image = dictImageWood["wood3"] as? UIImage
-        Timer.scheduledTimer(withTimeInterval: 0.26, repeats: true) { (timer) in
+        viewRepairRoad.image = UIImage(named: "reparRoad")
+        Timer.scheduledTimer(withTimeInterval: 0.07, repeats: true) { (timer) in
 
-            UIView.animate(withDuration: 0.26, delay: 0, options: [.curveLinear]) {
+            UIView.animate(withDuration: 0.07, delay: 0, options: [.curveLinear]) {
                 viewRepairRoad.frame.origin.y += self.step
                 if viewRepairRoad.frame.intersects(self.imageCar.frame) {
                      print("yes!")
@@ -413,18 +441,13 @@ greenView.frame.origin.y = self.greenView.frame.maxY
        return
     }
     // Создать Кустарники !!!!!!
-    func setupImageWood(_ view: UIImageView, _ view2: UIImageView) {
-
+    func setupStoneView(_ view: UIImageView) {
         view.frame.size = CGSize(width: 40, height: 40)
-        view2.frame.size = CGSize(width: 40, height: 40)
         view.frame.origin.x = view.frame.minX
         view.frame.origin.y = -view.frame.height
-        view2.frame.origin.x = self.view.frame.width - 40
-        view2.frame.origin.y = -view2.frame.height
         self.view.addSubview(view)
-        self.view.addSubview(view2)
-
     }
+
     // создать препятствия ремонт дороги!!!!
     func setupRepairObcastle(_ view: UIImageView) {
         view.frame.size = CGSize(width: 40, height: 40)
@@ -432,7 +455,7 @@ greenView.frame.origin.y = self.greenView.frame.maxY
         view.frame.origin.x = xOrigin
         view.frame.origin.y = -view.frame.height
         view.backgroundColor = .clear
-        roadView.addSubview(view)
+        self.view.addSubview(view)
     }
     // вытаскиваем сохранения  класс user
     func loadUserDifficult() {
